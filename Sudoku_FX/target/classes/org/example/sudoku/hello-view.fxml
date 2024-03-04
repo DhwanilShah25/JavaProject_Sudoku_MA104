@@ -1,0 +1,507 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Button?>
+
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.control.Label?>
+
+<?import javafx.scene.control.DialogPane?>
+<GridPane fx:controller="org.example.sudoku.HelloController" alignment="CENTER"
+          xmlns:fx="http://javafx.com/fxml" vgap="10" hgap="10"
+          fx:id="boardMedium" style="-fx-background-color: lightgrey">
+
+    <Label text="Tumhari Dassi Pakkki" fx:id="winLabel" GridPane.rowIndex="0" GridPane.columnSpan="3" textFill="green"
+           style="-fx-font-size:36" GridPane.halignment="CENTER" visible="false"/>
+    <VBox fx:id="wrongLabel" GridPane.rowIndex="1" GridPane.columnIndex="4" visible="false" alignment="CENTER">
+        <Label text="Lagta he tumhari" textFill="red" style="-fx-font-size: 24"  GridPane.halignment="CENTER"/>
+        <Label text="najar kamjor he!" textFill="red" style="-fx-font-size: 24" GridPane.halignment="CENTER"/>
+    </VBox>
+
+
+    <VBox GridPane.rowIndex="2" GridPane.columnIndex="4" spacing="5">
+        <fx:define>
+            <ToggleGroup fx:id="colorToggleGroup"/>
+        </fx:define>
+        <Label text="Select Difficulty:"
+               style="-fx-font-weight: bold; -fx-font:24 arial"/>
+        <RadioButton fx:id="easy" GridPane.rowIndex="0" GridPane.columnIndex="2"
+                     text="Easy"  toggleGroup="$colorToggleGroup" onAction="#radioClicked"
+                     style="-fx-font-weight: bold; -fx-font:16 arial"/>
+        <RadioButton fx:id="medium" GridPane.rowIndex="0" GridPane.columnIndex="3"
+                     text="Medium" toggleGroup="$colorToggleGroup" onAction="#radioClicked"
+                     style="-fx-font-weight: bold; -fx-font:16 arial"/>
+        <RadioButton fx:id="hard" GridPane.rowIndex="0" GridPane.columnIndex="4"
+                     text="Hard"  toggleGroup="$colorToggleGroup" onAction="#radioClicked"
+                     style="-fx-font-weight: bold; -fx-font:16 arial"/>
+    </VBox>
+
+    <VBox GridPane.rowIndex="1" GridPane.columnIndex="0" spacing="3">
+        <HBox spacing="3">
+            <Button fx:id="but00" alignment="CENTER" disable="true"
+                    minWidth="40" maxWidth="40" minHeight="40" maxHeight="40"
+                    onAction="#onBoardButtonClicked"
+                    style="-fx-font-weight: bold; -fx-background-color:white; -fx-border-color:black"/>
+            <Button fx:id="but01" alignment="CENTER" disable="true"
+                    minWidth="40" maxWidth="40" minHeight="40" maxHeight="40"
+                    onAction="#onBoardButtonClicked"
+                    style="-fx-font-weight: bold; -fx-background-color:white; -fx-border-color:black"/>
+            <Button fx:id="but02" alignment="CENTER" disable="true"
+                    minWidth="40" maxWidth="40" minHeight="40" maxHeight="40"
+                    onAction="#onBoardButtonClicked"
+                    style="-fx-font-weight: bold; -fx-background-color:white; -fx-border-color:black"/>
+        </HBox>
+        <HBox spacing="3">
+            <Button fx:id="but10" alignment="CENTER" disable="true"
+                    minWidth="40" maxWidth="40" minHeight="40" maxHeight="40"
+                    onAction="#onBoardButtonClicked"
+                    style="-fx-font-weight: bold; -fx-background-color:white; -fx-border-color:black"/>
+            <Button fx:id="but11" alignment="CENTER" disable="true"
+                    minWidth="40" maxWidth="40" minHeight="40" maxHeight="40"
+                    onAction="#onBoardButtonClicked"
+                    style="-fx-font-weight: bold; -fx-background-color:white; -fx-border-color:black"/>
+            <Button fx:id="but12" alignment="CENTER" disable="true"
+                    minWidth="40" maxWidth="40" minHeight="40" maxHeight="40"
+                    onAction="#onBoardButtonClicked"
+                    style="-fx-font-weight: bold; -fx-background-color:white; -fx-border-color:black"/>
+        </HBox>
+        <HBox spacing="3">
+            <Button fx:id="but20" alignment="CENTER" disable="true"
+                    minWidth="40" maxWidth="40" minHeight="40" maxHeight="40"
+                    onAction="#onBoardButtonClicked"
+                    style="-fx-font-weight: bold; -fx-background-color:white; -fx-border-color:black"/>
+            <Button fx:id="but21" alignment="CENTER" disable="true"
+                    minWidth="40" maxWidth="40" minHeight="40" maxHeight="40"
+                    onAction="#onBoardButtonClicked"
+                    style="-fx-font-weight: bold; -fx-background-color:white; -fx-border-color:black"/>
+            <Button fx:id="but22" alignment="CENTER" disable="true"
+                    minWidth="40" maxWidth="40" minHeight="40" maxHeight="40"
+                    onAction="#onBoardButtonClicked"
+                    style="-fx-font-weight: bold; -fx-background-color:white; -fx-border-color:black"/>
+        </HBox>
+    </VBox>
+
+    <VBox GridPane.rowIndex="1" GridPane.columnIndex="1" spacing="3">
+        <HBox spacing="3">
+            <Button fx:id="but03" alignment="CENTER" disable="true"
+                    minWidth="40" maxWidth="40" minHeight="40" maxHeight="40"
+                    onAction="#onBoardButtonClicked"
+                    style="-fx-font-weight: bold; -fx-background-color:white; -fx-border-color:black"/>
+            <Button fx:id="but04" alignment="CENTER" disable="true"
+                    minWidth="40" maxWidth="40" minHeight="40" maxHeight="40"
+                    onAction="#onBoardButtonClicked"
+                    style="-fx-font-weight: bold; -fx-background-color:white; -fx-border-color:black"/>
+            <Button fx:id="but05" alignment="CENTER" disable="true"
+                    minWidth="40" maxWidth="40" minHeight="40" maxHeight="40"
+                    onAction="#onBoardButtonClicked"
+                    style="-fx-font-weight: bold; -fx-background-color:white; -fx-border-color:black"/>
+        </HBox>
+        <HBox spacing="3">
+            <Button fx:id="but13" alignment="CENTER"
+                    minWidth="40" maxWidth="40" minHeight="40" maxHeight="40"
+                    onAction="#onBoardButtonClicked" disable="true"
+                    style="-fx-font-weight: bold; -fx-background-color:white; -fx-border-color:black"/>
+            <Button fx:id="but14" alignment="CENTER" disable="true"
+                    minWidth="40" maxWidth="40" minHeight="40" maxHeight="40"
+                    onAction="#onBoardButtonClicked"
+                    style="-fx-font-weight: bold; -fx-background-color:white; -fx-border-color:black"/>
+            <Button fx:id="but15" alignment="CENTER" disable="true"
+                    minWidth="40" maxWidth="40" minHeight="40" maxHeight="40"
+                    onAction="#onBoardButtonClicked"
+                    style="-fx-font-weight: bold; -fx-background-color:white; -fx-border-color:black"/>
+        </HBox>
+        <HBox spacing="3">
+            <Button fx:id="but23" alignment="CENTER" disable="true"
+                    minWidth="40" maxWidth="40" minHeight="40" maxHeight="40"
+                    onAction="#onBoardButtonClicked"
+                    style="-fx-font-weight: bold; -fx-background-color:white; -fx-border-color:black"/>
+            <Button fx:id="but24" alignment="CENTER" disable="true"
+                    minWidth="40" maxWidth="40" minHeight="40" maxHeight="40"
+                    onAction="#onBoardButtonClicked"
+                    style="-fx-font-weight: bold; -fx-background-color:white; -fx-border-color:black"/>
+            <Button fx:id="but25" alignment="CENTER" disable="true"
+                    minWidth="40" maxWidth="40" minHeight="40" maxHeight="40"
+                    onAction="#onBoardButtonClicked"
+                    style="-fx-font-weight: bold; -fx-background-color:white; -fx-border-color:black"/>
+        </HBox>
+    </VBox>
+
+    <VBox GridPane.rowIndex="1" GridPane.columnIndex="2" spacing="3">
+        <HBox spacing="3">
+            <Button fx:id="but06" alignment="CENTER" disable="true"
+                    minWidth="40" maxWidth="40" minHeight="40" maxHeight="40"
+                    onAction="#onBoardButtonClicked"
+                    style="-fx-font-weight: bold; -fx-background-color:white; -fx-border-color:black"/>
+            <Button fx:id="but07" alignment="CENTER" disable="true"
+                    minWidth="40" maxWidth="40" minHeight="40" maxHeight="40"
+                    onAction="#onBoardButtonClicked"
+                    style="-fx-font-weight: bold; -fx-background-color:white; -fx-border-color:black"/>
+            <Button fx:id="but08" alignment="CENTER" disable="true"
+                    minWidth="40" maxWidth="40" minHeight="40" maxHeight="40"
+                    onAction="#onBoardButtonClicked"
+                    style="-fx-font-weight: bold; -fx-background-color:white; -fx-border-color:black"/>
+        </HBox>
+        <HBox spacing="3">
+            <Button fx:id="but16" alignment="CENTER" disable="true"
+                    minWidth="40" maxWidth="40" minHeight="40" maxHeight="40"
+                    onAction="#onBoardButtonClicked"
+                    style="-fx-font-weight: bold; -fx-background-color:white; -fx-border-color:black"/>
+            <Button fx:id="but17" alignment="CENTER" disable="true"
+                    minWidth="40" maxWidth="40" minHeight="40" maxHeight="40"
+                    onAction="#onBoardButtonClicked"
+                    style="-fx-font-weight: bold; -fx-background-color:white; -fx-border-color:black"/>
+            <Button fx:id="but18" alignment="CENTER" disable="true"
+                    minWidth="40" maxWidth="40" minHeight="40" maxHeight="40"
+                    onAction="#onBoardButtonClicked"
+                    style="-fx-font-weight: bold; -fx-background-color:white; -fx-border-color:black"/>
+        </HBox>
+        <HBox spacing="3">
+            <Button fx:id="but26" alignment="CENTER" disable="true"
+                    minWidth="40" maxWidth="40" minHeight="40" maxHeight="40"
+                    onAction="#onBoardButtonClicked"
+                    style="-fx-font-weight: bold; -fx-background-color:white; -fx-border-color:black"/>
+            <Button fx:id="but27" alignment="CENTER" disable="true"
+                    minWidth="40" maxWidth="40" minHeight="40" maxHeight="40"
+                    onAction="#onBoardButtonClicked"
+                    style="-fx-font-weight: bold; -fx-background-color:white; -fx-border-color:black"/>
+            <Button fx:id="but28" alignment="CENTER" disable="true"
+                    minWidth="40" maxWidth="40" minHeight="40" maxHeight="40"
+                    onAction="#onBoardButtonClicked"
+                    style="-fx-font-weight: bold; -fx-background-color:white; -fx-border-color:black"/>
+        </HBox>
+    </VBox>
+
+    <VBox GridPane.rowIndex="2" GridPane.columnIndex="0" spacing="3">
+        <HBox spacing="3">
+            <Button fx:id="but30" alignment="CENTER" disable="true"
+                    minWidth="40" maxWidth="40" minHeight="40" maxHeight="40"
+                    onAction="#onBoardButtonClicked"
+                    style="-fx-font-weight: bold; -fx-background-color:white; -fx-border-color:black"/>
+            <Button fx:id="but31" alignment="CENTER" disable="true"
+                    minWidth="40" maxWidth="40" minHeight="40" maxHeight="40"
+                    onAction="#onBoardButtonClicked"
+                    style="-fx-font-weight: bold; -fx-background-color:white; -fx-border-color:black"/>
+            <Button fx:id="but32" alignment="CENTER" disable="true"
+                    minWidth="40" maxWidth="40" minHeight="40" maxHeight="40"
+                    onAction="#onBoardButtonClicked"
+                    style="-fx-font-weight: bold; -fx-background-color:white; -fx-border-color:black"/>
+        </HBox>
+        <HBox spacing="3">
+            <Button fx:id="but40" alignment="CENTER" disable="true"
+                    minWidth="40" maxWidth="40" minHeight="40" maxHeight="40"
+                    onAction="#onBoardButtonClicked"
+                    style="-fx-font-weight: bold; -fx-background-color:white; -fx-border-color:black"/>
+            <Button fx:id="but41" alignment="CENTER" disable="true"
+                    minWidth="40" maxWidth="40" minHeight="40" maxHeight="40"
+                    onAction="#onBoardButtonClicked"
+                    style="-fx-font-weight: bold; -fx-background-color:white; -fx-border-color:black"/>
+            <Button fx:id="but42" alignment="CENTER" disable="true"
+                    minWidth="40" maxWidth="40" minHeight="40" maxHeight="40"
+                    onAction="#onBoardButtonClicked"
+                    style="-fx-font-weight: bold; -fx-background-color:white; -fx-border-color:black"/>
+        </HBox>
+        <HBox spacing="3">
+            <Button fx:id="but50" alignment="CENTER" disable="true"
+                    minWidth="40" maxWidth="40" minHeight="40" maxHeight="40"
+                    onAction="#onBoardButtonClicked"
+                    style="-fx-font-weight: bold; -fx-background-color:white; -fx-border-color:black"/>
+            <Button fx:id="but51" alignment="CENTER" disable="true"
+                    minWidth="40" maxWidth="40" minHeight="40" maxHeight="40"
+                    onAction="#onBoardButtonClicked"
+                    style="-fx-font-weight: bold; -fx-background-color:white; -fx-border-color:black"/>
+            <Button fx:id="but52" alignment="CENTER" disable="true"
+                    minWidth="40" maxWidth="40" minHeight="40" maxHeight="40"
+                    onAction="#onBoardButtonClicked"
+                    style="-fx-font-weight: bold; -fx-background-color:white; -fx-border-color:black"/>
+        </HBox>
+    </VBox>
+
+    <VBox GridPane.rowIndex="2" GridPane.columnIndex="1" spacing="3">
+        <HBox spacing="3">
+            <Button fx:id="but33" alignment="CENTER" disable="true"
+                    minWidth="40" maxWidth="40" minHeight="40" maxHeight="40"
+                    onAction="#onBoardButtonClicked"
+                    style="-fx-font-weight: bold; -fx-background-color:white; -fx-border-color:black"/>
+            <Button fx:id="but34" alignment="CENTER" disable="true"
+                    minWidth="40" maxWidth="40" minHeight="40" maxHeight="40"
+                    onAction="#onBoardButtonClicked"
+                    style="-fx-font-weight: bold; -fx-background-color:white; -fx-border-color:black"/>
+            <Button fx:id="but35" alignment="CENTER" disable="true"
+                    minWidth="40" maxWidth="40" minHeight="40" maxHeight="40"
+                    onAction="#onBoardButtonClicked"
+                    style="-fx-font-weight: bold; -fx-background-color:white; -fx-border-color:black"/>
+        </HBox>
+        <HBox spacing="3">
+            <Button fx:id="but43" alignment="CENTER" disable="true"
+                    minWidth="40" maxWidth="40" minHeight="40" maxHeight="40"
+                    onAction="#onBoardButtonClicked"
+                    style="-fx-font-weight: bold; -fx-background-color:white; -fx-border-color:black"/>
+            <Button fx:id="but44" alignment="CENTER" disable="true"
+                    minWidth="40" maxWidth="40" minHeight="40" maxHeight="40"
+                    onAction="#onBoardButtonClicked"
+                    style="-fx-font-weight: bold; -fx-background-color:white; -fx-border-color:black"/>
+            <Button fx:id="but45" alignment="CENTER" disable="true"
+                    minWidth="40" maxWidth="40" minHeight="40" maxHeight="40"
+                    onAction="#onBoardButtonClicked"
+                    style="-fx-font-weight: bold; -fx-background-color:white; -fx-border-color:black"/>
+        </HBox>
+        <HBox spacing="3">
+            <Button fx:id="but53" alignment="CENTER" disable="true"
+                    minWidth="40" maxWidth="40" minHeight="40" maxHeight="40"
+                    onAction="#onBoardButtonClicked"
+                    style="-fx-font-weight: bold; -fx-background-color:white; -fx-border-color:black"/>
+            <Button fx:id="but54" alignment="CENTER" disable="true"
+                    minWidth="40" maxWidth="40" minHeight="40" maxHeight="40"
+                    onAction="#onBoardButtonClicked"
+                    style="-fx-font-weight: bold; -fx-background-color:white; -fx-border-color:black"/>
+            <Button fx:id="but55" alignment="CENTER" disable="true"
+                    minWidth="40" maxWidth="40" minHeight="40" maxHeight="40"
+                    onAction="#onBoardButtonClicked"
+                    style="-fx-font-weight: bold; -fx-background-color:white; -fx-border-color:black"/>
+        </HBox>
+    </VBox>
+
+    <VBox GridPane.rowIndex="2" GridPane.columnIndex="2" spacing="3">
+        <HBox spacing="3">
+            <Button fx:id="but36" alignment="CENTER" disable="true"
+                    minWidth="40" maxWidth="40" minHeight="40" maxHeight="40"
+                    onAction="#onBoardButtonClicked"
+                    style="-fx-font-weight: bold; -fx-background-color:white; -fx-border-color:black"/>
+            <Button fx:id="but37" alignment="CENTER" disable="true"
+                    minWidth="40" maxWidth="40" minHeight="40" maxHeight="40"
+                    onAction="#onBoardButtonClicked"
+                    style="-fx-font-weight: bold; -fx-background-color:white; -fx-border-color:black"/>
+            <Button fx:id="but38" alignment="CENTER" disable="true"
+                    minWidth="40" maxWidth="40" minHeight="40" maxHeight="40"
+                    onAction="#onBoardButtonClicked"
+                    style="-fx-font-weight: bold; -fx-background-color:white; -fx-border-color:black"/>
+        </HBox>
+        <HBox spacing="3">
+            <Button fx:id="but46" alignment="CENTER" disable="true"
+                    minWidth="40" maxWidth="40" minHeight="40" maxHeight="40"
+                    onAction="#onBoardButtonClicked"
+                    style="-fx-font-weight: bold; -fx-background-color:white; -fx-border-color:black"/>
+            <Button fx:id="but47" alignment="CENTER" disable="true"
+                    minWidth="40" maxWidth="40" minHeight="40" maxHeight="40"
+                    onAction="#onBoardButtonClicked"
+                    style="-fx-font-weight: bold; -fx-background-color:white; -fx-border-color:black"/>
+            <Button fx:id="but48" alignment="CENTER" disable="true"
+                    minWidth="40" maxWidth="40" minHeight="40" maxHeight="40"
+                    onAction="#onBoardButtonClicked"
+                    style="-fx-font-weight: bold; -fx-background-color:white; -fx-border-color:black"/>
+        </HBox>
+        <HBox spacing="3">
+            <Button fx:id="but56" alignment="CENTER" disable="true"
+                    minWidth="40" maxWidth="40" minHeight="40" maxHeight="40"
+                    onAction="#onBoardButtonClicked"
+                    style="-fx-font-weight: bold; -fx-background-color:white; -fx-border-color:black"/>
+            <Button fx:id="but57" alignment="CENTER" disable="true"
+                    minWidth="40" maxWidth="40" minHeight="40" maxHeight="40"
+                    onAction="#onBoardButtonClicked"
+                    style="-fx-font-weight: bold; -fx-background-color:white; -fx-border-color:black"/>
+            <Button fx:id="but58" alignment="CENTER" disable="true"
+                    minWidth="40" maxWidth="40" minHeight="40" maxHeight="40"
+                    onAction="#onBoardButtonClicked"
+                    style="-fx-font-weight: bold; -fx-background-color:white; -fx-border-color:black"/>
+        </HBox>
+    </VBox>
+
+    <VBox GridPane.rowIndex="3" GridPane.columnIndex="0" spacing="3">
+        <HBox spacing="3">
+            <Button fx:id="but60" alignment="CENTER" disable="true"
+                    minWidth="40" maxWidth="40" minHeight="40" maxHeight="40"
+                    onAction="#onBoardButtonClicked"
+                    style="-fx-font-weight: bold; -fx-background-color:white; -fx-border-color:black"/>
+            <Button fx:id="but61" alignment="CENTER"
+                    minWidth="40" maxWidth="40" minHeight="40" maxHeight="40"
+                    onAction="#onBoardButtonClicked" disable="true"
+                    style="-fx-font-weight: bold; -fx-background-color:white; -fx-border-color:black"/>
+            <Button fx:id="but62" alignment="CENTER" disable="true"
+                    minWidth="40" maxWidth="40" minHeight="40" maxHeight="40"
+                    onAction="#onBoardButtonClicked"
+                    style="-fx-font-weight: bold; -fx-background-color:white; -fx-border-color:black"/>
+        </HBox>
+        <HBox spacing="3">
+            <Button fx:id="but70" alignment="CENTER" disable="true"
+                    minWidth="40" maxWidth="40" minHeight="40" maxHeight="40"
+                    onAction="#onBoardButtonClicked"
+                    style="-fx-font-weight: bold; -fx-background-color:white; -fx-border-color:black"/>
+            <Button fx:id="but71" alignment="CENTER" disable="true"
+                    minWidth="40" maxWidth="40" minHeight="40" maxHeight="40"
+                    onAction="#onBoardButtonClicked"
+                    style="-fx-font-weight: bold; -fx-background-color:white; -fx-border-color:black"/>
+            <Button fx:id="but72" alignment="CENTER" disable="true"
+                    minWidth="40" maxWidth="40" minHeight="40" maxHeight="40"
+                    onAction="#onBoardButtonClicked"
+                    style="-fx-font-weight: bold; -fx-background-color:white; -fx-border-color:black"/>
+        </HBox>
+        <HBox spacing="3">
+            <Button fx:id="but80" alignment="CENTER" disable="true"
+                    minWidth="40" maxWidth="40" minHeight="40" maxHeight="40"
+                    onAction="#onBoardButtonClicked"
+                    style="-fx-font-weight: bold; -fx-background-color:white; -fx-border-color:black"/>
+            <Button fx:id="but81" alignment="CENTER" disable="true"
+                    minWidth="40" maxWidth="40" minHeight="40" maxHeight="40"
+                    onAction="#onBoardButtonClicked"
+                    style="-fx-font-weight: bold; -fx-background-color:white; -fx-border-color:black"/>
+            <Button fx:id="but82" alignment="CENTER" disable="true"
+                    minWidth="40" maxWidth="40" minHeight="40" maxHeight="40"
+                    onAction="#onBoardButtonClicked"
+                    style="-fx-font-weight: bold; -fx-background-color:white; -fx-border-color:black"/>
+        </HBox>
+    </VBox>
+
+    <VBox GridPane.rowIndex="3" GridPane.columnIndex="1" spacing="3">
+        <HBox spacing="3">
+            <Button fx:id="but63" alignment="CENTER" disable="true"
+                    minWidth="40" maxWidth="40" minHeight="40" maxHeight="40"
+                    onAction="#onBoardButtonClicked"
+                    style="-fx-font-weight: bold; -fx-background-color:white; -fx-border-color:black"/>
+            <Button fx:id="but64" alignment="CENTER" disable="true"
+                    minWidth="40" maxWidth="40" minHeight="40" maxHeight="40"
+                    onAction="#onBoardButtonClicked"
+                    style="-fx-font-weight: bold; -fx-background-color:white; -fx-border-color:black"/>
+            <Button fx:id="but65" alignment="CENTER" disable="true"
+                    minWidth="40" maxWidth="40" minHeight="40" maxHeight="40"
+                    onAction="#onBoardButtonClicked"
+                    style="-fx-font-weight: bold; -fx-background-color:white; -fx-border-color:black"/>
+        </HBox>
+        <HBox spacing="3">
+            <Button fx:id="but73" alignment="CENTER" disable="true"
+                    minWidth="40" maxWidth="40" minHeight="40" maxHeight="40"
+                    onAction="#onBoardButtonClicked"
+                    style="-fx-font-weight: bold; -fx-background-color:white; -fx-border-color:black"/>
+            <Button fx:id="but74" alignment="CENTER" disable="true"
+                    minWidth="40" maxWidth="40" minHeight="40" maxHeight="40"
+                    onAction="#onBoardButtonClicked"
+                    style="-fx-font-weight: bold; -fx-background-color:white; -fx-border-color:black"/>
+            <Button fx:id="but75" alignment="CENTER" disable="true"
+                    minWidth="40" maxWidth="40" minHeight="40" maxHeight="40"
+                    onAction="#onBoardButtonClicked"
+                    style="-fx-font-weight: bold; -fx-background-color:white; -fx-border-color:black"/>
+        </HBox>
+        <HBox spacing="3">
+            <Button fx:id="but83" alignment="CENTER" disable="true"
+                    minWidth="40" maxWidth="40" minHeight="40" maxHeight="40"
+                    onAction="#onBoardButtonClicked"
+                    style="-fx-font-weight: bold; -fx-background-color:white; -fx-border-color:black"/>
+            <Button fx:id="but84" alignment="CENTER" disable="true"
+                    minWidth="40" maxWidth="40" minHeight="40" maxHeight="40"
+                    onAction="#onBoardButtonClicked"
+                    style="-fx-font-weight: bold; -fx-background-color:white; -fx-border-color:black"/>
+            <Button fx:id="but85" alignment="CENTER" disable="true"
+                    minWidth="40" maxWidth="40" minHeight="40" maxHeight="40"
+                    onAction="#onBoardButtonClicked"
+                    style="-fx-font-weight: bold; -fx-background-color:white; -fx-border-color:black"/>
+        </HBox>
+    </VBox>
+
+    <VBox GridPane.rowIndex="3" GridPane.columnIndex="2" spacing="3">
+        <HBox spacing="3">
+            <Button fx:id="but66" alignment="CENTER" disable="true"
+                    minWidth="40" maxWidth="40" minHeight="40" maxHeight="40"
+                    onAction="#onBoardButtonClicked"
+                    style="-fx-font-weight: bold; -fx-background-color:white; -fx-border-color:black"/>
+            <Button fx:id="but67" alignment="CENTER" disable="true"
+                    minWidth="40" maxWidth="40" minHeight="40" maxHeight="40"
+                    onAction="#onBoardButtonClicked"
+                    style="-fx-font-weight: bold; -fx-background-color:white; -fx-border-color:black"/>
+            <Button fx:id="but68" alignment="CENTER" disable="true"
+                    minWidth="40" maxWidth="40" minHeight="40" maxHeight="40"
+                    onAction="#onBoardButtonClicked"
+                    style="-fx-font-weight: bold; -fx-background-color:white; -fx-border-color:black"/>
+        </HBox>
+        <HBox spacing="3">
+            <Button fx:id="but76" alignment="CENTER" disable="true"
+                    minWidth="40" maxWidth="40" minHeight="40" maxHeight="40"
+                    onAction="#onBoardButtonClicked"
+                    style="-fx-font-weight: bold; -fx-background-color:white; -fx-border-color:black"/>
+            <Button fx:id="but77" alignment="CENTER" disable="true"
+                    minWidth="40" maxWidth="40" minHeight="40" maxHeight="40"
+                    onAction="#onBoardButtonClicked"
+                    style="-fx-font-weight: bold; -fx-background-color:white; -fx-border-color:black"/>
+            <Button fx:id="but78" alignment="CENTER" disable="true"
+                    minWidth="40" maxWidth="40" minHeight="40" maxHeight="40"
+                    onAction="#onBoardButtonClicked"
+                    style="-fx-font-weight: bold; -fx-background-color:white; -fx-border-color:black"/>
+        </HBox>
+
+        <HBox spacing="3">
+            <Button fx:id="but86" alignment="CENTER" disable="true"
+                    minWidth="40" maxWidth="40" minHeight="40" maxHeight="40"
+                    onAction="#onBoardButtonClicked"
+                    style="-fx-font-weight: bold; -fx-background-color:white; -fx-border-color:black"/>
+            <Button fx:id="but87" alignment="CENTER" disable="true"
+                    minWidth="40" maxWidth="40" minHeight="40" maxHeight="40"
+                    onAction="#onBoardButtonClicked"
+                    style="-fx-font-weight: bold; -fx-background-color:white; -fx-border-color:black"/>
+            <Button fx:id="but88" alignment="CENTER" disable="true"
+                    minWidth="40" maxWidth="40" minHeight="40" maxHeight="40"
+                    onAction="#onBoardButtonClicked"
+                    style="-fx-font-weight: bold; -fx-background-color:white; -fx-border-color:black"/>
+        </HBox>
+    </VBox>
+    <Label GridPane.rowIndex="4"/>
+    <HBox fx:id="inputBox" GridPane.rowIndex="6" GridPane.columnIndex="0" visible="false" spacing="10"
+        GridPane.columnSpan="3">
+        <HBox spacing="3">
+            <Button fx:id="inp1" alignment="CENTER" text="1"
+                    minWidth="40" maxWidth="40" minHeight="40" maxHeight="40"
+                    onAction="#onInputButtonClicked"
+                    style="-fx-font-weight: bold; -fx-background-color:azure; -fx-border-color:black"/>
+            <Button fx:id="inp2" alignment="CENTER" text="2"
+                    minWidth="40" maxWidth="40" minHeight="40" maxHeight="40"
+                    onAction="#onInputButtonClicked"
+                    style="-fx-font-weight: bold; -fx-background-color:azure; -fx-border-color:black"/>
+            <Button fx:id="inp3" alignment="CENTER" text="3"
+                    minWidth="40" maxWidth="40" minHeight="40" maxHeight="40"
+                    onAction="#onInputButtonClicked"
+                    style="-fx-font-weight: bold; -fx-background-color:azure; -fx-border-color:black"/>
+        </HBox>
+        <HBox spacing="3">
+            <Button fx:id="inp4" alignment="CENTER" text="4"
+                    minWidth="40" maxWidth="40" minHeight="40" maxHeight="40"
+                    onAction="#onInputButtonClicked"
+                    style="-fx-font-weight: bold; -fx-background-color:azure; -fx-border-color:black"/>
+            <Button fx:id="inp5" alignment="CENTER" text="5"
+                    minWidth="40" maxWidth="40" minHeight="40" maxHeight="40"
+                    onAction="#onInputButtonClicked"
+                    style="-fx-font-weight: bold; -fx-background-color:azure; -fx-border-color:black"/>
+            <Button fx:id="inp6" alignment="CENTER" text="6"
+                    minWidth="40" maxWidth="40" minHeight="40" maxHeight="40"
+                    onAction="#onInputButtonClicked"
+                    style="-fx-font-weight: bold; -fx-background-color:azure; -fx-border-color:black"/>
+        </HBox>
+        <HBox spacing="3">
+            <Button fx:id="inp7" alignment="CENTER" text="7"
+                    minWidth="40" maxWidth="40" minHeight="40" maxHeight="40"
+                    onAction="#onInputButtonClicked"
+                    style="-fx-font-weight: bold; -fx-background-color:azure; -fx-border-color:black"/>
+            <Button fx:id="inp8" alignment="CENTER" text="8"
+                    minWidth="40" maxWidth="40" minHeight="40" maxHeight="40"
+                    onAction="#onInputButtonClicked"
+                    style="-fx-font-weight: bold; -fx-background-color:azure; -fx-border-color:black"/>
+            <Button fx:id="inp9" alignment="CENTER" text="9"
+                    minWidth="40" maxWidth="40" minHeight="40" maxHeight="40"
+                    onAction="#onInputButtonClicked"
+                    style="-fx-font-weight: bold; -fx-background-color:azure; -fx-border-color:black"/>
+        </HBox>
+    </HBox>
+
+    <HBox fx:id="clearBox" GridPane.columnIndex="0" GridPane.rowIndex="5" alignment="CENTER" visible="false"
+    GridPane.columnSpan="3">
+        <Button text="Clear" onAction="#clearButtonClicked" GridPane.columnSpan="3"
+                minWidth="400" maxWidth="400" minHeight="40" maxHeight="40"
+                style="-fx-font-size:16; -fx-background-color:white; -fx-border-color:black"/>
+    </HBox>
+
+    <VBox fx:id="control" GridPane.rowIndex="3" GridPane.columnIndex="4" alignment="CENTER" spacing="5">
+        <Button fx:id="giveUp" text="Humse na Ho Paeega!" maxHeight="35" minHeight="35" maxWidth="200" minWidth="200"
+                style="-fx-font-size:16; -fx-background-color:white; -fx-border-color:black" disable="true" onAction="#GiveUp" visible="false"/>
+        <Button fx:id="playAgain" text="Ek Aur Ho jaaye!" maxHeight="35" minHeight="35" maxWidth="200" minWidth="200"
+                style="-fx-font-size:16; -fx-background-color:white; -fx-border-color:black" disable="true" onAction="#playAgain" visible="false"/>
+    </VBox>
+
+</GridPane>
